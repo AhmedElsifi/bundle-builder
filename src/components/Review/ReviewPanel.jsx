@@ -88,7 +88,11 @@ export default function ReviewPanel() {
   const hasSelection = sortedCategories.length > 0;
 
   return (
-    <Section title="REVIEW" isExpanded={true} className="w-99.75 h-213.75">
+    <Section
+      title="REVIEW"
+      isExpanded={true}
+      className="w-99.75 h-fit max-sm:w-full"
+    >
       <div className="px-5">
         <h1 className="text-[22px] font-semibold text-obsidian">
           Your security system
@@ -151,18 +155,17 @@ export default function ReviewPanel() {
               </div>
             </div>
 
-            <div className="mt-3">
+            <div className="mt-3 text-center">
               {savings > 0 && (
                 <p className="text-active-border text-xs font-semibold mb-1">
                   Congrats! You're saving ${savings.toFixed(2)} on your security
                   bundle!
                 </p>
               )}
+              <button className="w-87.5 h-12 bg-wyze-purple text-white text-[17px] font-semibold py-3 rounded-sm cursor-pointer hover:bg-wyze-purple/90 transition-colors duration-500 max-[390px]:w-full">
+                Checkout
+              </button>
             </div>
-
-            <button className="w-87.5 h-12 bg-wyze-purple text-white text-[17px] font-semibold py-3 rounded-sm cursor-pointer hover:bg-wyze-purple/90 transition-colors duration-500">
-              Checkout
-            </button>
           </>
         )}
 

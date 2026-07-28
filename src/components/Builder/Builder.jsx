@@ -32,7 +32,7 @@ export default function Builder() {
           key={step.index}
           title={`Step ${step.index} of ${STEP_COUNT}`}
           isExpanded={expandedSteps.has(step.index)}
-          className="w-3xl"
+          className="w-3xl max-sm:w-full"
         >
           <Step
             stepIndex={step.index}

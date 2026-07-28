@@ -10,7 +10,7 @@ export default function Section({
     <div
       className={`${className} ${
         isExpanded
-          ? "bg-bg-primary rounded-[10px] py-3.75"
+          ? "bg-bg-primary rounded-[10px] py-3.75 max-sm:rounded-none"
           : "border-b-[0.5px] border-[#1F1F1F]"
       }`}
     >
