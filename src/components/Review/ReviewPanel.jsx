@@ -97,7 +97,7 @@ export default function ReviewPanel() {
         <h1 className="text-[22px] font-semibold text-obsidian">
           Your security system
         </h1>
-        <p className="text-sm font-normal text-charcoal-gray mt-1 leading-snug">
+        <p className="text-sm font-normal text-charcoal-gray mt-1 leading-snug max-sm:text-xs">
           Review your personalized protection system designed to keep what
           matters most safe.
         </p>

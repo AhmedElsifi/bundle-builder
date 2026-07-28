@@ -25,7 +25,9 @@ export default function Step({
       >
         <div className="flex flex-row items-center gap-2">
           <img src={icon} alt={title} className="w-6.5 h-6.5" />
-          <h2 className="text-[22px] font-semibold text-obsidian">{title}</h2>
+          <h2 className="text-[22px] font-semibold text-obsidian max-sm:text-lg">
+            {title}
+          </h2>
         </div>
         <div className="flex flex-row items-center gap-1.25 text-wyze-purple text-sm">
           {selectedCount > 0 && `${selectedCount} selected`}

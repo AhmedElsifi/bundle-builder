@@ -24,10 +24,10 @@ export default function ReviewItemRow({
     if (showOriginal) {
       return (
         <div className="text-right w-fit">
-          <span className="text-gray-600 line-through text-sm font-medium block">
+          <span className="text-gray-600 line-through text-sm font-medium block  max-sm:text-xs">
             ${item.originalPrice.toFixed(2)}
           </span>
-          <span className="text-wyze-purple font-medium text-sm">
+          <span className="text-wyze-purple font-medium text-sm  max-sm:text-xs">
             ${item.price.toFixed(2)}
             {item.interval || ""}
           </span>
@@ -35,7 +35,7 @@ export default function ReviewItemRow({
       );
     }
     return (
-      <span className="text-wyze-purple font-medium text-sm">
+      <span className="text-wyze-purple font-medium text-sm  max-sm:text-xs">
         ${item.price.toFixed(2)}
         {item.interval || ""}
       </span>
@@ -49,7 +49,7 @@ export default function ReviewItemRow({
         alt={item.name}
         className="w-10.25 h-10.25 rounded object-cover shrink-0"
       />
-      <span className="flex-1 text-sm text-obsidian font-normal leading-tight">
+      <span className="flex-1 text-sm text-obsidian font-normal leading-tight max-sm:text-xs">
         {item.name}
       </span>
       {!disableStepper && (
