@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useCallback } from "react";
+import { createContext, useReducer, useCallback } from "react";
 
 const BundleContext = createContext();
 
@@ -19,7 +19,8 @@ function reducer(state, action) {
       const key = action.vid != null ? `${action.pid}|${action.vid}` : action.pid;
       if (!state.items[key]) return state;
       if (state.items[key].qty <= 1) {
-        const { [key]: _, ...items } = state.items;
+        const items = { ...state.items };
+        delete items[key];
         return { ...state, items };
       }
       return {
@@ -36,16 +37,30 @@ function reducer(state, action) {
   }
 }
 
+const DEFAULT_BUNDLE = {
+  items: {
+    "wyze-cam-v4|v4-white": { pid: "wyze-cam-v4", vid: "v4-white", qty: 1 },
+    "wyze-cam-pan-v3": { pid: "wyze-cam-pan-v3", vid: null, qty: 2 },
+    "wyze-motion-sensor": { pid: "wyze-motion-sensor", vid: null, qty: 2 },
+    "wyze-hub": { pid: "wyze-hub", vid: null, qty: 1 },
+    "wyze-microsd-256gb": { pid: "wyze-microsd-256gb", vid: null, qty: 2 },
+  },
+  plan: "wyze-duo-cam-unlimited",
+};
+
 const saved = (() => {
   try {
-    const data = localStorage.getItem("bundle");
-    return data ? JSON.parse(data) : null;
+    const raw = localStorage.getItem("bundle");
+    if (raw === null) return "USE_DEFAULT";
+    const parsed = JSON.parse(raw);
+    if (parsed._v !== 1) return "USE_DEFAULT";
+    return { items: parsed.items, plan: parsed.plan };
   } catch {
-    return null;
+    return "USE_DEFAULT";
   }
 })();
 
-const INITIAL = saved ?? { items: {}, plan: null };
+const INITIAL = saved === "USE_DEFAULT" ? DEFAULT_BUNDLE : saved;
 
 export function BundleProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, INITIAL);
@@ -62,8 +77,4 @@ export function BundleProvider({ children }) {
   );
 }
 
-export function useBundle() {
-  const ctx = useContext(BundleContext);
-  if (!ctx) throw new Error("useBundle must be used within BundleProvider");
-  return ctx;
-}
+export { BundleContext };

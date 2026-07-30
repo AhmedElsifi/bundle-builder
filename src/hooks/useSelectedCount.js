@@ -1,4 +1,4 @@
-import { useBundle } from "../context/BundleContext";
+import { useBundle } from "./useBundle";
 import { getBundleKey } from "../utils/helpers";
 
 export default function useSelectedCount(items) {

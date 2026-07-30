@@ -2,7 +2,8 @@ import { useState } from "react";
 import Section from "../UI/Section";
 import ReviewCategories from "./ReviewCategories";
 import ReviewSummary from "./ReviewSummary";
-import { useBundle } from "../../context/BundleContext";
+import { useBundle } from "../../hooks/useBundle";
+import { SAVE_VERSION } from "../../utils/constants";
 import data from "../../../products.json";
 import satisfactionBadge from "../../assets/icons/Satisfaction Badge.svg";
 import FastShippingRow from "./FastShippingRow";
@@ -95,7 +96,7 @@ export default function ReviewPanel() {
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
-    localStorage.setItem("bundle", JSON.stringify({ items, plan }));
+    localStorage.setItem("bundle", JSON.stringify({ _v: SAVE_VERSION, items, plan }));
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
   };

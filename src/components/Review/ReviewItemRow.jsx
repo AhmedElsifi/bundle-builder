@@ -61,9 +61,15 @@ export default function ReviewItemRow({
       {!disableStepper && (
         <div className="flex items-center gap-1">
           <button
-            className="w-5 h-5 rounded-sm border border-white bg-white hover:border-light-full-gray hover:bg-[#F1F1F2] duration-500 flex items-center justify-center text-[14px] text-charcoal-light-gray cursor-pointer hover:bg-gray-100 font-medium"
-            onClick={onDecrement}
             aria-label="Decrease quantity"
+            aria-disabled={qty <= 0}
+            disabled={qty <= 0}
+            className={`w-5 h-5 rounded-sm border border-white bg-white transition-colors duration-500 flex items-center justify-center text-[14px] text-charcoal-light-gray font-medium ${
+              qty <= 0
+                ? "opacity-40 cursor-not-allowed"
+                : "cursor-pointer hover:border-light-full-gray hover:bg-[#F1F1F2] hover:bg-gray-100"
+            }`}
+            onClick={qty <= 0 ? undefined : onDecrement}
           >
             -
           </button>

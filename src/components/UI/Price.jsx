@@ -4,7 +4,7 @@ export default function Price({ price, compareAt, suffix }) {
   return (
     <div className="flex items-baseline gap-1">
       {compareAt != null && (
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start max-xl:flex-row max-xl:gap-0.75">
           <span className="text-base text-primary-red line-through font-normal">
             {formatPrice(compareAt)}
           </span>

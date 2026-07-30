@@ -20,17 +20,17 @@ export default function ProductCard({ product }) {
     <div
       role="button"
       tabIndex={0}
-      className={`bg-white rounded-[10px] shadow-sm border-2 cursor-pointer w-[361.5px] h-[173px] flex p-2.5 gap-[19px] ${
+      className={`bg-white rounded-[10px] shadow-sm border-2 cursor-pointer w-[361.5px] h-[173px] flex p-2.5 gap-[19px] max-xl:w-[224.6px] max-xl:h-[331.1px] max-xl:flex-col ${
         inBundle ? "border-secondary-purple" : "border-transparent"
       }`}
       onClick={toggleBundle}
       onKeyDown={(e) => e.key === "Enter" && toggleBundle()}
     >
-      <div className="relative w-25.25 shrink-0 self-stretch">
+      <div className="relative w-25.25 shrink-0 self-stretch max-xl:w-[202.6px] max-xl:max-h-[152.1px]">
         <img
           src={currentImage}
           alt={product.name}
-          className="w-full h-full object-contain rounded-lg"
+          className="w-full h-full object-contain rounded-lg max-xl:w-[202.6px]"
         />
         {product.badge && (
           <span className="flex justify-center items-center absolute top-1 left-1 bg-secondary-purple text-white text-[12px] font-medium px-1.5 py-0.5 rounded-[10px]">

@@ -11,3 +11,5 @@ export const STEPS = [
 ];
 
 export const STEP_COUNT = STEPS.length;
+
+export const SAVE_VERSION = 1;

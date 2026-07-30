@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useBundle } from "../context/BundleContext";
+import { useBundle } from "./useBundle";
 
 export default function useProductSelection(product) {
   const { items: bundleItems, add, remove } = useBundle();

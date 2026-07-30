@@ -125,7 +125,7 @@
         },
         {
             "id": "wyze-motion-sensor",
-            "name": "Wyze Motion Sensor",
+            "name": "Wyze Sense Motion Sensor",
             "description": "Detects motion in any room. Triggers lights, cameras, and alerts.",
             "step": 3,
             "category": "sensors",
@@ -203,10 +203,10 @@
         },
         {
             "id": "wyze-hub",
-            "name": "Wyze Hub",
+            "name": "Wyze Sense Hub (Required)",
             "description": "Central hub for all your Wyze sensors. Extends range and improves reliability.",
-            "step": 4,
-            "category": "accessories",
+            "step": 3,
+            "category": "sensors",
             "badge": null,
             "image": "/assets/products/wyze-hub.jpg",
             "compare_at": null,
@@ -224,6 +224,19 @@
             "image": "/assets/products/wyze-solar-panel.jpg",
             "compare_at": null,
             "price": 24.99,
+            "learn_more_url": "#",
+            "variants": null
+        },
+        {
+            "id": "wyze-microsd-256gb",
+            "name": "Wyze MicroSD Card (256GB)",
+            "description": "High-speed 256GB microSD card for continuous video recording.",
+            "step": 4,
+            "category": "accessories",
+            "badge": null,
+            "image": "/assets/products/wyze-microsd-256gb.jpg",
+            "compare_at": null,
+            "price": 34.99,
             "learn_more_url": "#",
             "variants": null
         }
@@ -285,7 +298,7 @@
         },
         {
             "id": "wyze-duo-cam-unlimited",
-            "name": "Cam unlimited",
+            "name": "Cam Unlimited",
             "level": "unlimited",
             "description": "Two cameras. Two views. Double the porch protection.",
             "price": 19.99,
