@@ -7,7 +7,7 @@
             "step": 1,
             "category": "cameras",
             "badge": "Save 22%",
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Wyze+Cam+v4",
+            "image": "/assets/products/wyze-cam-v4.jpg",
             "compare_at": 35.98,
             "price": 27.98,
             "learn_more_url": "#",
@@ -16,19 +16,19 @@
                     "id": "v4-white",
                     "name": "White",
                     "color": "#F5F5F5",
-                    "image": "https://placehold.co/600x400/F5F5F5/1a1a2e?text=v4+White"
+                    "image": "/assets/products/wyze-cam-v4.jpg"
                 },
                 {
                     "id": "v4-grey",
                     "name": "Grey",
                     "color": "#8E8E93",
-                    "image": "https://placehold.co/600x400/8E8E93/FFFFFF?text=v4+Grey"
+                    "image": "/assets/products/wyze-cam-v4.jpg"
                 },
                 {
                     "id": "v4-black",
                     "name": "Black",
                     "color": "#1C1C1E",
-                    "image": "https://placehold.co/600x400/1C1C1E/FFFFFF?text=v4+Black"
+                    "image": "/assets/products/wyze-cam-v4.jpg"
                 }
             ]
         },
@@ -39,7 +39,7 @@
             "step": 1,
             "category": "cameras",
             "badge": "Save 22%",
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Floodlight+v2",
+            "image": "/assets/products/wyze-cam-floodlight-v2.jpg",
             "compare_at": 89.98,
             "price": 69.98,
             "learn_more_url": "#",
@@ -48,13 +48,13 @@
                     "id": "flood-white",
                     "name": "White",
                     "color": "#F5F5F5",
-                    "image": "https://placehold.co/600x400/F5F5F5/1a1a2e?text=Flood+White"
+                    "image": "/assets/products/wyze-cam-floodlight-v2.jpg"
                 },
                 {
                     "id": "flood-black",
                     "name": "Black",
                     "color": "#1C1C1E",
-                    "image": "https://placehold.co/600x400/1C1C1E/FFFFFF?text=Flood+Black"
+                    "image": "/assets/products/wyze-cam-floodlight-v2.jpg"
                 }
             ]
         },
@@ -65,7 +65,7 @@
             "step": 1,
             "category": "cameras",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Battery+Cam+Pro",
+            "image": "/assets/products/wyze-battery-cam-pro.jpg",
             "compare_at": null,
             "price": 99.98,
             "learn_more_url": "#",
@@ -74,13 +74,13 @@
                     "id": "battery-white",
                     "name": "White",
                     "color": "#F5F5F5",
-                    "image": "https://placehold.co/600x400/F5F5F5/1a1a2e?text=Battery+White"
+                    "image": "/assets/products/wyze-battery-cam-pro.jpg"
                 },
                 {
                     "id": "battery-black",
                     "name": "Black",
                     "color": "#1C1C1E",
-                    "image": "https://placehold.co/600x400/1C1C1E/FFFFFF?text=Battery+Black"
+                    "image": "/assets/products/wyze-battery-cam-pro.jpg"
                 }
             ]
         },
@@ -91,7 +91,7 @@
             "step": 1,
             "category": "cameras",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Cam+Pan+v3",
+            "image": "/assets/products/wyze-cam-pan-v3.jpg",
             "compare_at": 39.98,
             "price": 34.98,
             "learn_more_url": "#",
@@ -104,7 +104,7 @@
             "step": 1,
             "category": "cameras",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Duo+Doorbell",
+            "image": "/assets/products/wyze-duo-cam-doorbell.jpg",
             "compare_at": null,
             "price": 69.98,
             "learn_more_url": "#",
@@ -117,7 +117,7 @@
             "step": 3,
             "category": "sensors",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Entry+Sensor",
+            "image": "/assets/products/wyze-entry-sensor.jpg",
             "compare_at": null,
             "price": 9.99,
             "learn_more_url": "#",
@@ -130,7 +130,7 @@
             "step": 3,
             "category": "sensors",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Motion+Sensor",
+            "image": "/assets/products/wyze-motion-sensor.jpg",
             "compare_at": null,
             "price": 12.99,
             "learn_more_url": "#",
@@ -143,7 +143,7 @@
             "step": 3,
             "category": "sensors",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Contact+Sensor",
+            "image": "/assets/products/wyze-contact-sensor.jpg",
             "compare_at": null,
             "price": 8.99,
             "learn_more_url": "#",
@@ -156,7 +156,7 @@
             "step": 3,
             "category": "sensors",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Keypad",
+            "image": "/assets/products/wyze-keypad.jpg",
             "compare_at": null,
             "price": 24.99,
             "learn_more_url": "#",
@@ -169,7 +169,7 @@
             "step": 3,
             "category": "sensors",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Leak+Sensor",
+            "image": "/assets/products/wyze-leak-sensor.jpg",
             "compare_at": null,
             "price": 11.99,
             "learn_more_url": "#",
@@ -182,7 +182,7 @@
             "step": 4,
             "category": "accessories",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Complete+Protection",
+            "image": "/assets/products/wyze-complete-protection.jpg",
             "compare_at": 29.99,
             "price": 19.99,
             "learn_more_url": "#",
@@ -195,7 +195,7 @@
             "step": 4,
             "category": "accessories",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Mounting+Kit",
+            "image": "/assets/products/wyze-mounting-kit.jpg",
             "compare_at": null,
             "price": 14.99,
             "learn_more_url": "#",
@@ -208,7 +208,7 @@
             "step": 4,
             "category": "accessories",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Hub",
+            "image": "/assets/products/wyze-hub.jpg",
             "compare_at": null,
             "price": 29.99,
             "learn_more_url": "#",
@@ -221,7 +221,7 @@
             "step": 4,
             "category": "accessories",
             "badge": null,
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Solar+Panel",
+            "image": "/assets/products/wyze-solar-panel.jpg",
             "compare_at": null,
             "price": 24.99,
             "learn_more_url": "#",
@@ -230,32 +230,32 @@
     ],
     "plans": [
         {
-            "id": "wyze-duo-cam-unlimited",
-            "name": "Wyze Duo Cam Unlimited",
-            "description": "Two cameras. Two views. Double the porch protection.",
-            "price": 12.99,
-            "compare_at": 9.99,
+            "id": "wyze-home-monitoring",
+            "name": "Cam limited",
+            "level": "limited",
+            "description": "Complete home security with professional monitoring and cellular backup.",
+            "price": 4.99,
+            "compare_at": null,
             "billing_period": "month",
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Duo+Unlimited",
+            "image": "/assets/icons/plan.svg",
             "features": [
-                "24/7 continuous recording",
-                "Cloud storage for 30 days",
-                "AI motion detection",
-                "Person, vehicle, and pet detection",
-                "Package detection",
-                "Smart alerts with thumbnails",
-                "Unlimited camera support"
+                "24/7 professional monitoring",
+                "Cellular backup",
+                "No long-term contract",
+                "Self-installation",
+                "Mobile app control"
             ],
-            "selected": true
+            "selected": false
         },
         {
             "id": "wyze-cam-plus",
-            "name": "Wyze Cam Plus",
+            "name": "Cam plus",
+            "level": "plus",
             "description": "Advanced AI detection and unlimited cloud storage for all your cameras.",
             "price": 8.99,
-            "compare_at": 5.99,
+            "compare_at": 12.99,
             "billing_period": "month",
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Cam+Plus",
+            "image": "/assets/icons/plan.svg",
             "features": [
                 "Unlimited cloud storage",
                 "AI detection (person, vehicle, pet)",
@@ -267,12 +267,13 @@
         },
         {
             "id": "wyze-cam-pro",
-            "name": "Wyze Cam Pro",
+            "name": "Cam pro",
+            "level": "pro",
             "description": "Everything in Cam Plus, plus professional monitoring and cellular backup.",
-            "price": 19.99,
-            "compare_at": 14.99,
+            "price": 14.99,
+            "compare_at": 19.99,
             "billing_period": "month",
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Cam+Pro",
+            "image": "/assets/icons/plan.svg",
             "features": [
                 "All Cam Plus features",
                 "24/7 professional monitoring",
@@ -283,21 +284,24 @@
             "selected": false
         },
         {
-            "id": "wyze-home-monitoring",
-            "name": "Wyze Home Monitoring",
-            "description": "Complete home security with professional monitoring and cellular backup.",
-            "price": 9.99,
-            "compare_at": null,
+            "id": "wyze-duo-cam-unlimited",
+            "name": "Cam unlimited",
+            "level": "unlimited",
+            "description": "Two cameras. Two views. Double the porch protection.",
+            "price": 19.99,
+            "compare_at": 24.99,
             "billing_period": "month",
-            "image": "https://placehold.co/600x400/1a1a2e/FFFFFF?text=Home+Monitoring",
+            "image": "/assets/icons/plan.svg",
             "features": [
-                "24/7 professional monitoring",
-                "Cellular backup",
-                "No long-term contract",
-                "Self-installation",
-                "Mobile app control"
+                "24/7 continuous recording",
+                "Cloud storage for 30 days",
+                "AI motion detection",
+                "Person, vehicle, and pet detection",
+                "Package detection",
+                "Smart alerts with thumbnails",
+                "Unlimited camera support"
             ],
-            "selected": false
+            "selected": true
         }
     ]
 }

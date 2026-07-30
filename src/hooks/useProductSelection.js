@@ -10,9 +10,7 @@ export default function useProductSelection(product) {
 
   const activeKey = hasVariants ? `${product.id}|${activeVariant}` : product.id;
   const activeItem = bundleItems[activeKey];
-  const inBundle = hasVariants
-    ? product.variants.some((v) => bundleItems[`${product.id}|${v.id}`])
-    : !!bundleItems[product.id];
+  const inBundle = !!activeItem;
   const qty = activeItem?.qty ?? 0;
 
   const currentImage = hasVariants

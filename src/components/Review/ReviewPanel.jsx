@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Section from "../UI/Section";
-import ReviewCategoryHeader from "./ReviewCategoryHeader";
-import ReviewItemRow from "./ReviewItemRow";
+import ReviewCategories from "./ReviewCategories";
+import ReviewSummary from "./ReviewSummary";
 import { useBundle } from "../../context/BundleContext";
 import data from "../../../products.json";
 import satisfactionBadge from "../../assets/icons/Satisfaction Badge.svg";
@@ -14,16 +14,28 @@ data.products.forEach((p) => {
 
 const CATEGORY_ORDER = ["CAMERAS", "SENSORS", "ACCESSORIES", "PLAN"];
 
-export default function ReviewPanel() {
-  const { items, plan, add, remove } = useBundle();
-  const [saved, setSaved] = useState(false);
+function getPlanItems(plan, data) {
+  if (!plan) return null;
+  const planData = data.plans.find((p) => p.id === plan);
+  if (!planData) return null;
+  return [
+    {
+      key: plan,
+      name: planData.name,
+      level: planData.level,
+      image: "/assets/icons/plan-review.svg",
+      qty: 1,
+      originalPrice: planData.compare_at ?? null,
+      price: planData.price,
+      interval: "/mo",
+      pid: plan,
+      vid: null,
+      disableStepper: true,
+    },
+  ];
+}
 
-  const handleSave = () => {
-    localStorage.setItem("bundle", JSON.stringify({ items, plan }));
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
-  };
-
+function buildCategoryGroups(items, plan, data, productMap) {
   const categoryGroups = {};
   Object.values(items).forEach((entry) => {
     const product = productMap[entry.pid];
@@ -49,32 +61,23 @@ export default function ReviewPanel() {
     });
   });
 
-  if (plan) {
-    const planData = data.plans.find((p) => p.id === plan);
-    if (planData) {
-      categoryGroups["PLAN"] = [
-        {
-          key: plan,
-          name: planData.name,
-          image: planData.image,
-          qty: 1,
-          originalPrice: planData.compare_at ?? null,
-          price: planData.price,
-          interval: "/mo",
-          pid: plan,
-          vid: null,
-          disableStepper: true,
-        },
-      ];
-    }
+  const planItems = getPlanItems(plan, data);
+  if (planItems) {
+    categoryGroups["PLAN"] = planItems;
   }
 
-  const sortedCategories = Object.entries(categoryGroups).sort(([a], [b]) => {
+  return categoryGroups;
+}
+
+function sortCategories(categoryGroups) {
+  return Object.entries(categoryGroups).sort(([a], [b]) => {
     const ia = CATEGORY_ORDER.indexOf(a);
     const ib = CATEGORY_ORDER.indexOf(b);
     return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
   });
+}
 
+function calculateTotals(categoryGroups) {
   let totalOriginal = 0;
   let totalCurrent = 0;
   Object.values(categoryGroups).forEach((group) => {
@@ -84,7 +87,23 @@ export default function ReviewPanel() {
     });
   });
   const savings = totalOriginal - totalCurrent;
+  return { totalOriginal, totalCurrent, savings };
+}
 
+export default function ReviewPanel() {
+  const { items, plan, add, remove } = useBundle();
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = () => {
+    localStorage.setItem("bundle", JSON.stringify({ items, plan }));
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2000);
+  };
+
+  const categoryGroups = buildCategoryGroups(items, plan, data, productMap);
+  const sortedCategories = sortCategories(categoryGroups);
+  const { totalOriginal, totalCurrent, savings } =
+    calculateTotals(categoryGroups);
   const hasSelection = sortedCategories.length > 0;
 
   return (
@@ -110,63 +129,16 @@ export default function ReviewPanel() {
           </p>
         )}
 
-        {sortedCategories.map(([catTitle, catItems]) => (
-          <div key={catTitle}>
-            <ReviewCategoryHeader title={catTitle} />
-            {catItems.map((item) => (
-              <ReviewItemRow
-                key={item.key}
-                item={item}
-                qty={item.qty}
-                disableStepper={item.disableStepper}
-                onIncrement={() => add(item.pid, item.vid)}
-                onDecrement={() => remove(item.pid, item.vid)}
-              />
-            ))}
-            <hr className="border-t border-light-full-gray my-3.75" />
-          </div>
-        ))}
+        <ReviewCategories categories={sortedCategories} add={add} remove={remove} />
         {Object.keys(items).length > 0 && <FastShippingRow />}
 
         {hasSelection && (
-          <>
-            <div className="flex items-start justify-between mt-4">
-              <div className="flex items-center gap-1.5">
-                <img
-                  src={satisfactionBadge}
-                  alt="Satisfaction Badge"
-                  className="w-19.5 h-19.5"
-                />
-              </div>
-              <div className="flex flex-col items-end">
-                <span className="flex justify-center items-center bg-wyze-purple text-white text-xs font-normal w-28.25 h-4.5 rounded-sm mb-1">
-                  as low as $19/mo
-                </span>
-
-                <div className="flex flex-row gap-2 items-end h-8">
-                  <p className="text-gray-600 text-lg font-normal self-end line-through">
-                    ${totalOriginal.toFixed(2)}
-                  </p>
-
-                  <p className="text-wyze-purple font-bold text-2xl">
-                    ${totalCurrent.toFixed(2)}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-3 text-center">
-              {savings > 0 && (
-                <p className="text-active-border text-xs font-semibold mb-1">
-                  Congrats! You're saving ${savings.toFixed(2)} on your security
-                  bundle!
-                </p>
-              )}
-              <button className="w-87.5 h-12 bg-wyze-purple text-white text-[17px] font-semibold py-3 rounded-sm cursor-pointer hover:bg-wyze-purple/90 transition-colors duration-500 max-[390px]:w-full">
-                Checkout
-              </button>
-            </div>
-          </>
+          <ReviewSummary
+            totalOriginal={totalOriginal}
+            totalCurrent={totalCurrent}
+            savings={savings}
+            satisfactionBadge={satisfactionBadge}
+          />
         )}
 
         <p

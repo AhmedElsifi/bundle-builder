@@ -60,15 +60,11 @@ export default function ProductCard({ product }) {
             />
           )}
           <div className="flex items-end justify-between">
-            {inBundle ? (
-              <QuantityStepper
-                value={qty}
-                onIncrement={handleAdd}
-                onDecrement={handleRemove}
-              />
-            ) : (
-              <div />
-            )}
+            <QuantityStepper
+              value={qty}
+              onIncrement={handleAdd}
+              onDecrement={handleRemove}
+            />
             <Price price={product.price} compareAt={product.compare_at} />
           </div>
         </div>

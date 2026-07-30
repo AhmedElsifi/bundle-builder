@@ -43,15 +43,21 @@ export default function ReviewItemRow({
   };
 
   return (
-    <div className="flex justify-between items-center gap-3 mb-3">
+    <div className={`flex justify-between items-center mb-3 ${item.level ? "gap-[3px]" : "gap-3"}`}>
       <img
         src={item.image}
         alt={item.name}
-        className="w-10.25 h-10.25 rounded object-cover shrink-0"
+        className={`${item.level ? "w-5 h-6" : "w-10.25 h-10.25"} rounded object-cover shrink-0`}
       />
-      <span className="flex-1 text-sm text-obsidian font-normal leading-tight max-sm:text-xs">
-        {item.name}
-      </span>
+      {item.level ? (
+        <span className="flex-1 text-base text-obsidian font-bold leading-tight max-sm:text-sm">
+          Cam <span className="text-wyze-purple">{item.level}</span>
+        </span>
+      ) : (
+        <span className="flex-1 text-sm text-obsidian font-normal leading-tight max-sm:text-xs">
+          {item.name}
+        </span>
+      )}
       {!disableStepper && (
         <div className="flex items-center gap-1">
           <button
