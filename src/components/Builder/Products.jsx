@@ -18,7 +18,7 @@ export default function Products({ items }) {
   const isOdd = items.length % 2 === 1;
 
   return (
-    <div className="grid grid-cols-2 gap-3 max-sm:grid-cols-1 max-sm:flex max-sm:flex-col max-sm:items-center max-xl:flex max-xl:flex-row max-xl:justify-center max-xl:flex-wrap">
+    <div className="grid grid-cols-2 gap-3 max-sm:grid-cols-1 max-sm:flex max-sm:flex-row max-sm:flex-wrap max-sm:items-center max-xl:flex max-xl:flex-row max-xl:justify-center max-xl:flex-wrap">
       {items.map((item, i) => {
         const isLastOdd = isOdd && i === items.length - 1;
         return (

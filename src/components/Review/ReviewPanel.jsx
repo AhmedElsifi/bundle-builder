@@ -96,7 +96,10 @@ export default function ReviewPanel() {
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
-    localStorage.setItem("bundle", JSON.stringify({ _v: SAVE_VERSION, items, plan }));
+    localStorage.setItem(
+      "bundle",
+      JSON.stringify({ _v: SAVE_VERSION, items, plan }),
+    );
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
   };
@@ -111,43 +114,51 @@ export default function ReviewPanel() {
     <Section
       title="REVIEW"
       isExpanded={true}
-      className="w-99.75 h-fit max-sm:w-full"
+      className="w-99.75 h-fit max-md:w-full max-xl:w-full"
     >
-      <div className="px-5">
-        <h1 className="text-[22px] font-semibold text-obsidian">
-          Your security system
-        </h1>
-        <p className="text-sm font-normal text-charcoal-gray mt-1 leading-snug max-sm:text-xs">
-          Review your personalized protection system designed to keep what
-          matters most safe.
-        </p>
-
-        <hr className="border-t border-light-full-gray my-3" />
-
-        {!hasSelection && (
-          <p className="text-xs text-charcoal-gray text-center py-6">
-            No items selected yet.
+      <div className="px-5 sm:max-xl:flex max-xl:gap-13">
+        <div className="sm:max-xl:w-1/2">
+          <h1 className="text-[22px] font-semibold text-obsidian">
+            Your security system
+          </h1>
+          <p className="text-sm font-normal text-charcoal-gray mt-1 leading-snug max-sm:text-xs">
+            Review your personalized protection system designed to keep what
+            matters most safe.
           </p>
-        )}
 
-        <ReviewCategories categories={sortedCategories} add={add} remove={remove} />
-        {Object.keys(items).length > 0 && <FastShippingRow />}
+          <hr className="border-t border-light-full-gray my-3" />
 
-        {hasSelection && (
-          <ReviewSummary
-            totalOriginal={totalOriginal}
-            totalCurrent={totalCurrent}
-            savings={savings}
-            satisfactionBadge={satisfactionBadge}
+          {!hasSelection && (
+            <p className="text-xs text-charcoal-gray text-center py-6">
+              No items selected yet.
+            </p>
+          )}
+
+          <ReviewCategories
+            categories={sortedCategories}
+            add={add}
+            remove={remove}
           />
-        )}
+          {Object.keys(items).length > 0 && <FastShippingRow />}
+        </div>
 
-        <p
-          className="text-charcoal-gray text-sm italic font-normal underline text-center mt-2 cursor-pointer"
-          onClick={handleSave}
-        >
-          {saved ? "Saved!" : "Save my system for later"}
-        </p>
+        <div className="sm:max-xl:w-1/2">
+          {hasSelection && (
+            <ReviewSummary
+              totalOriginal={totalOriginal}
+              totalCurrent={totalCurrent}
+              savings={savings}
+              satisfactionBadge={satisfactionBadge}
+            />
+          )}
+
+          <p
+            className="text-charcoal-gray text-sm italic font-normal underline text-center mt-2 cursor-pointer"
+            onClick={handleSave}
+          >
+            {saved ? "Saved!" : "Save my system for later"}
+          </p>
+        </div>
       </div>
     </Section>
   );
